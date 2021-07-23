@@ -1,0 +1,121 @@
+{% extends "base.html" %}
+{% block title%} {{ title }} {% endblock %}
+{% block content%}
+<section id="auth">
+    <div class="container">
+        <div class="row mt-4">
+            <div class="col-lg-5 m-auto card">
+                <form action="{{ request.path }}" method="POST" class="card-body">
+                    {{ form.csrf_token }}
+                    {% with messages = get_flashed_messages(with_categories=true) %}
+                    <!-- Categories: success (green), info (blue), warning (yellow), danger (red) -->
+                    {% if messages %}
+                    {% for category, message in messages %}
+                    <div class="alert alert-{{category}} alert-dismissible fade show" role="alert">
+                        {{ message }}
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    {% endfor %}
+                    {% endif %}
+                    {% endwith %}
+                    <div class="text-center">
+                        <h2>MeDOC</h2>
+                        <h5><span> {{ legend }} </span></h5>
+                    </div>
+                    {% if request.path == '/0/register/' %}
+                    <div class="form-row">
+                        <div class="col mb-3">
+                            {{ form.fname(class_="form-control",placeholder="Firstname")}}
+                        </div>
+                        {% for error in form.fname.errors %}
+                        <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                            {{ error }}
+                            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                        </div>
+                        {% endfor%}
+                        <div class="col mb-3">
+                            {{ form.lname(class_="form-control",placeholder="Lastname")}}
+                        </div>
+                        {% for error in form.lname.errors %}
+                        <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                            {{ error }}
+                            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                        </div>
+                        {% endfor%}
+                    </div>
+                    <div class="form-group mb-3">
+                        {{ form.location(class_="form-control",placeholder="Location i.e Nairobi,Kenya")}}
+                    </div>
+                    {% for error in form.location.errors %}
+                    <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                        {{ error }}
+                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                    </div>
+                    {% endfor%}
+                    <div class="form-row">
+                        <div class="col mb-3">
+                            {{ form.sex(class_="form-control")}}
+                        </div>
+                        {% for error in form.sex.errors %}
+                        <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                            {{ error }}
+                            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                        </div>
+                        {% endfor%}
+                        <div class="col mb-3">
+                            {{ form.speciality(class_="form-control")}}
+                        </div>
+                        {% for error in form.speciality.errors %}
+                        <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                            {{ error }}
+                            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                        </div>
+                        {% endfor%}
+                    </div>
+                    {% endif%}
+                    <div class="form-group mb-3">
+                        {{ form.email(class_="form-control",placeholder="Email")}}
+                    </div>
+                    {% for error in form.email.errors %}
+                    <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                        {{ error }}
+                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                    </div>
+                    {% endfor%}
+                    <div class="form-group mb-3">
+                        {{ form.pwd(class_="form-control",placeholder="Password")}}
+                    </div>
+                    {% for error in form.pwd.errors %}
+                    <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                        {{ error }}
+                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                    </div>
+                    {% endfor%}
+                    {% if request.path == '/0/register/' %}
+                    <div class="form-group mb-3">
+                        {{ form.cpwd(class_="form-control",placeholder="Confirm Password")}}
+                    </div>
+                    {% for error in form.cpwd.errors %}
+                    <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                        {{ error }}
+                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                    </div>
+                    {% endfor%}
+                    {% endif %}
+                    <div class="text-center"><button type="submit" class="btn btn-primary mb-3"> {{ action }} </button>
+                        <p>Back to
+                            {% if request.path != '/0/register/' %}
+                            <a href="{{url_for('auth.register')}}">Create account</a>
+                            {% else %}
+                            <a href="{{url_for('auth.login')}}">Login</a>
+                            {% endif %}
+                        </p>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

@@ -1,0 +1,9 @@
+{% extends "dashboard_base.html" %}
+{% block title%} {{ title }} {% endblock %}
+
+{% block content%}
+  <div class="container">
+    <h1 class="display-4 mb-2 text-primary">Welcome {{ current_user.fname}} {{ current_user.lname}} </h1>
+    <p class="lead text-muted">Simple Admin Dashboard with Bootstrap.</p>
+  </div>
+{% endblock%}

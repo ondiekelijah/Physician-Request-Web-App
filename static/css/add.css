@@ -1,0 +1,42 @@
+#new-post-page{
+    background-color: white;
+}
+#new-post-head{
+    text-align: center;
+}
+/* image upload */
+.hidden{
+    display:none;
+}
+#publish-post{
+    width: 30%;
+    margin-bottom: 5rem;
+    border-radius:0;
+
+}
+
+@media screen and (max-width: 599px){
+    #new-post{
+        margin: 0;
+        padding: 0;
+    }
+    #add-post-form{
+        margin: 0;
+    }
+    #publish-post{
+        width: 40%;
+    }
+}
+/* medium screens */
+@media screen and (max-width: 992px){
+    #new-post{
+        margin: 0;
+        padding: 0;
+    }
+    #add-post-form{
+        margin: 0;
+    }
+    #publish-post{
+        width: 80%;
+    }
+}

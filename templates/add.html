@@ -1,0 +1,49 @@
+{% extends "dashboard_base.html" %}
+{% block title%} {{ title }} {% endblock %}
+{% block content%}
+<div class="container row">
+    <div class="col-md-6">
+        <p class="lead text-muted">Add a Spare</p>
+        <form action="{{request.path}}" method="POST" enctype="multipart/form-data">
+
+            {{ form.name(class_="form-control",placeholder="Name")}}
+            {% for error in form.name.errors %}
+            <div class="alert alert-danger">
+                <button type="button" class="close" data-dismiss="alert">&times;</button>
+                {{ error }}
+            </div>
+            {% endfor%}
+            
+            {{ form.description(class_="form-control",placeholder="Description")}}
+            {% for error in form.description.errors %}
+            <div class="alert alert-danger">
+                <button type="button" class="close" data-dismiss="alert">&times;</button>
+                {{ error }}
+            </div>
+            {% endfor%}
+
+            <input name="image" type="file" id="upload" class="hidden" onchange="">
+            <div class="form-group mt-4">
+                {{ form.spare_img(class_="form-control-file") }}
+                {% if form.spare_img.errors %}
+                {% for error in form.spare_img.errors %}
+                <div class="alert alert-danger mt-2">
+                    <button type="button" class="close" data-dismiss="alert">&times;</button>
+                    {{ error }}<br>
+                </div>
+                {% endfor%}
+                {% endif %}
+            </div>
+
+            <div class="text-center mr-4">
+                <button class="btn w3-right btn-outline-primary rounded-pill" type="submit"> {{ button_text }} </button>
+            </div>
+
+
+        </form>
+    </div>
+    <div class="col-md-6">
+        <img src="/static/img/svgs/tow-truck.svg" class="img-fluid">
+    </div>
+</div>
+{% endblock%}

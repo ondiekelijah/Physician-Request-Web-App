@@ -1,0 +1,24 @@
+    #auth {
+        padding: 50px 0;
+        text-align: center;
+        font-size: 15px;
+
+    }
+
+    #auth form {
+        margin-top: 30px;
+        background: #fff;
+        padding: 1.5rem;
+        position: relative;
+        border-radius: 4px;
+        box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.06);
+        text-align: left;
+    }
+
+    #auth form input {
+        border-radius: 0;
+    }
+
+    #auth form button {
+        width: 60%;
+    }

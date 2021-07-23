@@ -1,0 +1,34 @@
+body {
+    /* background-color: ;
+    height: 100vh;
+    background-size: cover;
+    background-position: center;
+    background-image: linear-gradient(to right,
+        rgba(0, 0, 0, 1) 20%,
+        rgba(0, 0, 0, .7) 40%,
+        rgba(0, 0, 0, .4) 70%,
+        rgba(0, 0, 0, 0) 100%), url(/static/img/bg.jpg); */
+}
+.navbar{
+    padding: 2rem;
+}
+.navbar .navbar-brand{
+    font-size: 2rem;
+    font-weight: 700;
+    color: rgb(36, 33, 33);
+}
+.hero-text{
+    font-size: 1.5rem;
+    font-weight: 400;
+    color: rgb(36, 33, 33);
+}
+
+.nav-link{
+    color: rgb(36, 33, 33);
+}
+
+#user-profile-image{
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+}

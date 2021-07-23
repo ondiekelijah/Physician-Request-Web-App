@@ -1,0 +1,71 @@
+{% extends "dashboard_base.html" %}
+{% block title%} {{ title }} {% endblock %}
+{% block content%}
+<div class="container row">
+    <div class="col-md-6">
+        <div class="container text-center">
+            <div class="w3-half">
+                <img src="/static/img/profile_images/{{current_user.image}}" alt="profile-image" id="user-profile-image" class="w3-hover-opacity w3-border w3-card ">
+            </div>
+        </div>
+        <!-- update account form -->
+        <form method="POST" action="{{ request.path }}" enctype="multipart/form-data">
+            {{ form.csrf_token }}
+            <div class="w3-half">
+                {% if current_user.status == True %}
+                <a href="{{ url_for('auth.toggle_status') }}" class="btn btn-success m-1 btn-sm">Online</a>
+                {% else %}
+                <a href="{{ url_for('auth.toggle_status') }}" class="btn btn-info m-1 btn-sm">Offline</a>
+                {%endif %}
+            </div>
+            <div class="w3-half">
+                {{ form.email(class_="form-control")}}
+                {% for error in form.email.errors %}
+                <div class="alert alert-danger mt-2">
+                    <button type="button" class="close" data-dismiss="alert">&times;</button>
+                    {{ error }}
+                </div>
+                {% endfor%}
+            </div>
+            <div class="w3-half">
+                {{ form.fname(class_="form-control")}}
+                {% for error in form.fname.errors %}
+                <div class="alert alert-danger mt-2">
+                    <button type="button" class="close" data-dismiss="alert">&times;</button>
+                    {{ error }}
+                </div>
+                {% endfor%}
+            </div>
+            {{ form.lname(class_="form-control ")}}
+            {% for error in form.lname.errors %}
+            <div class="alert alert-danger mt-2">
+                <button type="button" class="close" data-dismiss="alert">&times;</button>
+                {{ error }}
+            </div>
+            {% endfor%}
+            {{ form.location(class_="form-control ")}}
+            <p>Coordinates : Lat:{{ location_coordinates[0] }} Long:{{ location_coordinates[1] }}</p>
+            {% for error in form.location.errors %}
+            <div class="alert alert-danger mt-2">
+                <button type="button" class="close" data-dismiss="alert">&times;</button>
+                {{ error }}
+            </div>
+            {% endfor%}
+            <label for="">Update Profile picture </label>
+            {{ form.profileImg(class_="form-control-file") }}
+            {% if form.profileImg.errors %}
+            {% for error in form.profileImg.errors %}
+            <div class="alert alert-danger mt-2">
+                <button type="button" class="close" data-dismiss="alert">&times;</button>
+                {{ error }}<br>
+            </div>
+            {% endfor%}
+            {% endif %}
+            <button class="btn btn-block w3-left btn-primary mt-2" type="submit">Update</button>
+        </form>
+    </div>
+    <div class="col-md-6">
+        <img src="/static/img/svgs/docs.svg" class="img-fluid">
+    </div>
+</div>
+{% endblock%}
