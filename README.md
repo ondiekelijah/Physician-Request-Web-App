@@ -5,14 +5,14 @@ Download and install Python, for this tutorial I'll be using Python 3.8.5, make 
           
 Navigate to your current project directory for this case it will be **Physician-Request-Web-App**. <br>
           
-### 1 .Create an environment
+### 1 .Clone the repo and Create an environment
           
 Depending on your operating system,make a virtual environment to avoid messing with your machine's primary dependencies
           
 **Windows**
           
 ```
-
+git clone https://github.com/Dev-Elie/Physician-Request-Web-App.git
 cd Physician-Request-Web-App
 py -3 -m venv venv
 
@@ -21,8 +21,8 @@ py -3 -m venv venv
 **macOS/Linux**
           
 ```
+git clone https://github.com/Dev-Elie/Physician-Request-Web-App.git
 cd Physician-Request-Web-App
-
 python3 -m venv venv
 
 ```
