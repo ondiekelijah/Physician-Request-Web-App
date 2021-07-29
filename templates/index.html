@@ -19,7 +19,7 @@
 <body class="container">
     <!-- Plug Bootstrap Nav Bar code here -->
     <nav class="navbar navbar-expand-lg text-white">
-        <a class="navbar-brand" href="{{url_for('index')}}">MeDOC</a>
+        <a class="navbar-brand" href="{{url_for('index')}}">Me<span>DOC</span> </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -36,8 +36,29 @@
     </nav>
     <main>
         <div class="container text-center p-3">
-            <h1 class="hero-text">Komesha Covid</h1>
+            <h1 class="hero-text text-white">Find a Physician</h1>
+            <h3 class="hero-text-2">Your Health our priority</h3>
+            <div class="row mb-2">
+                <div class="col-lg-8 mx-auto">
+                    <div>
+                        <!-- Underlined search bars with buttons -->
+                        <form>
+                            <div class="row mb-2">
+                                <div class="form-group col-md-9">
+                                    <input id="search" type="text" placeholder="Search by Location,speciality" class="form-control form-control-underlined">
+                                </div>
+                                <div class="form-group col-md-3">
+                                    <button type="submit" class="btn btn-primary rounded-pill btn-block shadow" id="search-btn">Search</button>
+                                </div>
+                            </div>
+                        </form>
+                        <!-- End -->
+                    </div>
+                </div>
+            </div>
         </div>
+        <!--         Message flashing
+ -->
         {% with messages = get_flashed_messages(with_categories=true) %}
         <!-- Categories: success (green), info (blue), warning (yellow), danger (red) -->
         {% if messages %}
@@ -58,30 +79,32 @@
                         <tr>
                             <th scope="col"></th>
                             <th scope="col">Physician</th>
-                            <th scope="col">Email</th>
                             <th scope="col">Sex</th>
                             <th scope="col">Speciality</th>
                             <th scope="col">Location</th>
                             <th scope="col">Status</th>
                         </tr>
                     </thead>
-                    <tbody>
+                    <tbody id="physicians">
                         {% for user in users %}
                         <tr>
                             <th scope="row"> <img src="static/img/profile_images/{{user.image}}" id="user-profile-image"> </th>
-                            <td>{{ user.fname }} {{ user.lname }}</</td> <td>{{ user.email }}</td>
-                            <td>{{ user.sex }}</td>
+                            <td>{{ user.fname }} {{ user.lname }}</</td> <td>{{ user.sex }}</td>
                             <td>{{ user.speciality }}</td>
                             <td>{{ user.location }}</td>
-                            
                             <td>
                                 {% if user.status == True %}
-                                <a class="btn btn-success m-1 btn-sm">Online</a>
+                                <p class="btn btn-success m-1 btn-sm">Online</p>
                                 {% else %}
-                                <a class="btn btn-danger m-1 btn-sm">Offline</a>
-                                {%endif %} </td>
+                                <p class="btn btn-danger m-1 btn-sm">Offline</p>
+                                {%endif %} 
+                            </td>
                             <td>
+                                {% if user.status == True %}
                                 <a class="btn btn-primary m-1 btn-sm" data-toggle="modal" data-target="#doc-request-{{user.id}}">Request</a>
+                                {% else %}
+                                 <a class="btn btn-primary disabled m-1 btn-sm" data-toggle="modal" data-target="#doc-request-{{user.id}}">Request</a>
+                                {%endif %}
                             </td>
                             <!-- Modal -->
                             <div class="modal fade" id="doc-request-{{user.id}}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -110,6 +133,19 @@
             </div>
         </div>
     </main>
+    <!-- Table realtime search
+ -->
+    <script type="text/javascript">
+    $(document).ready(function() {
+        $("#search").on("keyup", function() {
+            var value = $(this).val().toLowerCase();
+            $("#physicians tr").filter(function() {
+                $(this).toggle($(this).text()
+                    .toLowerCase().indexOf(value) > -1)
+            });
+        });
+    });
+    </script>
 </body>
 
 </html>

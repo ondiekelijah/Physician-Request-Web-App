@@ -15,7 +15,7 @@
                 {% if current_user.status == True %}
                 <a href="{{ url_for('auth.toggle_status') }}" class="btn btn-success m-1 btn-sm">Online</a>
                 {% else %}
-                <a href="{{ url_for('auth.toggle_status') }}" class="btn btn-info m-1 btn-sm">Offline</a>
+                <a href="{{ url_for('auth.toggle_status') }}" class="btn btn-danger m-1 btn-sm">Offline</a>
                 {%endif %}
             </div>
             <div class="w3-half">
@@ -36,6 +36,8 @@
                 </div>
                 {% endfor%}
             </div>
+
+
             {{ form.lname(class_="form-control ")}}
             {% for error in form.lname.errors %}
             <div class="alert alert-danger mt-2">
@@ -43,9 +45,17 @@
                 {{ error }}
             </div>
             {% endfor%}
+
+            {{ form.speciality(class_="form-control ")}}
+            {% for error in form.speciality.errors %}
+            <div class="alert alert-danger mt-2">
+                <button type="button" class="close" data-dismiss="alert">&times;</button>
+                {{ error }}
+            </div>
+            {% endfor%}
+
             {{ form.location(class_="form-control ")}}
-            <p>Coordinates : Lat:{{ location_coordinates[0] }} Long:{{ location_coordinates[1] }}</p>
-            {% for error in form.location.errors %}
+          {% for error in form.location.errors %}
             <div class="alert alert-danger mt-2">
                 <button type="button" class="close" data-dismiss="alert">&times;</button>
                 {{ error }}

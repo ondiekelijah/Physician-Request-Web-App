@@ -18,14 +18,14 @@ from wtforms import ValidationError
 from wtforms import validators
 from models import User
 
-
+# Login form class
 class login_form(FlaskForm):
     pwd = PasswordField(validators=[InputRequired(), Length(min=8, max=72)])
     
     email = StringField(validators=[InputRequired(), Email(), Length(1, 64)])
 
 
-
+# Register form class
 class register_form(FlaskForm):
     fname = StringField(
         validators=[
@@ -52,7 +52,8 @@ class register_form(FlaskForm):
 
     email = StringField(validators=[InputRequired(), Email(), Length(1, 64)])
     sex = SelectField("sex", choices=[('Male'),('Female')])
-    speciality = SelectField("specialty", choices=[('Doctor'),('Nurse')])
+    # Add more physicians
+    speciality = SelectField("specialty", choices=[('PSYCHIATRIST'),('DENTIST'),('PSYCHIATRIST'),('GYNECOLOGIST'),('NEUROLOGIST')])    
     location = StringField(validators=[InputRequired()])
     pwd = PasswordField(validators=[InputRequired(), Length(8, 72)])
     cpwd = PasswordField(
@@ -63,7 +64,7 @@ class register_form(FlaskForm):
         ]
     )
 
-
+# Update profile form class
 class UpdateProfile(FlaskForm):
 
     email = StringField(validators=[InputRequired(), Email(), Length(1, 64)])
@@ -91,8 +92,11 @@ class UpdateProfile(FlaskForm):
     )
     location = StringField(validators=[InputRequired()])
     profileImg = FileField(validators=[FileAllowed(["jpg", "png", "jpeg", "svg"])])
+    speciality = SelectField("specialty", choices=[('PSYCHIATRIST'),('DENTIST'),('PSYCHIATRIST'),('GYNECOLOGIST'),('NEUROLOGIST')])
 
-
+    # Check before the user updates thier profile to ascertain that the email 
+    # has not been used before
+    
     def validate_email(self, email):
         if email.data != current_user.email:
             if User.query.filter_by(email=email.data).first():

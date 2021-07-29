@@ -1,5 +1,5 @@
-body {
-    /* background-color: ;
+/*body {
+     background-color: ;
     height: 100vh;
     background-size: cover;
     background-position: center;
@@ -7,28 +7,74 @@ body {
         rgba(0, 0, 0, 1) 20%,
         rgba(0, 0, 0, .7) 40%,
         rgba(0, 0, 0, .4) 70%,
-        rgba(0, 0, 0, 0) 100%), url(/static/img/bg.jpg); */
+        rgba(0, 0, 0, 0) 100%), url(/static/img/bg.jpg); 
+}*/
+body {
+    width: 100%;
+    min-height: 100vh;
+    /*    background-image: url("../img/hero-bg.png");
+*/
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    background-image: linear-gradient(to right,
+        rgba(0, 0, 0, .7) 20%,
+        rgba(0, 0, 0, .4) 40%,
+        rgba(0, 0, 0, .2) 70%,
+        rgba(0, 0, 0, 0) 100%), url("../img/docs.svg");
 }
-.navbar{
+
+/*main {
+    width: 100%;
+    background-image: url("../img/docs.svg");
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: left;
+        background-image: linear-gradient(to right,
+        rgba(0, 0, 0, 1) 20%,
+        rgba(0, 0, 0, .7) 40%,
+        rgba(0, 0, 0, .4) 70%,
+        rgba(0, 0, 0, 0) 100%), url("../img/docs.svg");
+
+}*/
+
+.navbar {
     padding: 2rem;
 }
-.navbar .navbar-brand{
+
+.navbar .navbar-brand {
     font-size: 2rem;
     font-weight: 700;
-    color: rgb(36, 33, 33);
+    color: #ffff;
 }
-.hero-text{
-    font-size: 1.5rem;
-    font-weight: 400;
+
+.navbar .navbar-brand span {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #007BFF;
+}
+
+.hero-text {
+    font-size: 3rem;
+    font-weight: 900;
+}
+.hero-text-2{
+    margin-bottom: 2rem;
+    font-weight: 900;
+    color: #ffff;
+}
+.nav-link {
     color: rgb(36, 33, 33);
 }
 
-.nav-link{
-    color: rgb(36, 33, 33);
+#search {
+    padding: 12px;
+    border-radius: 30px;
+
 }
 
-#user-profile-image{
-  height: 50px;
-  width: 50px;
-  border-radius: 50%;
+#user-profile-image {
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
 }

@@ -5,6 +5,7 @@ from flask_sqlalchemy import event
 from flask import current_app
 import os
 
+# User table
 
 class User(UserMixin, db.Model):
     __tablename__ = "user"
@@ -19,7 +20,9 @@ class User(UserMixin, db.Model):
     sex = db.Column(db.String(20), nullable=False)
     speciality = db.Column(db.String(20), default="Doctor")
     status = db.Column(db.Boolean, default=False)
-        
+
+# User loader
+       
 @login_manager.user_loader
 def load_user(user_id):
     return User.query.get(int(user_id))
