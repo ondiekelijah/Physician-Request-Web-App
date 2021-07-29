@@ -1,3 +1,16 @@
+### Objective
+Building a mobile and web compatible web application that enables patients and physicians get in reach easily.
+## Features
+
+* Account management for both physicians and patients 
+  - Create account,login and update account details
+  - Phyicians to be able to respond to appointment requests
+  - Physicians can also be able to track records of appointments they avail for
+  - Patients to be able to keep a record of appointments they make
+                                                    
+* Physicians may toggle between times when they are online - available and when they are offline - not available for appointments
+* Patients to be able to see physicians around them and the approximate distance between them and their precise locations
+
 ### Requirements ,Packages used and Installation
 Download and install Python, for this tutorial I'll be using Python 3.8.5, make sure to check the box Add Python to PATH on the installation setup screen
  
@@ -5,14 +18,14 @@ Download and install Python, for this tutorial I'll be using Python 3.8.5, make 
           
 Navigate to your current project directory for this case it will be **Physician-Request-Web-App**. <br>
           
-### 1 .Clone the repo and Create an environment
+### 1 .Fork ,Clone the repo and Create an environment
           
 Depending on your operating system,make a virtual environment to avoid messing with your machine's primary dependencies
           
 **Windows**
           
 ```
-git clone https://github.com/Dev-Elie/Physician-Request-Web-App.git
+git clone https://github.com/{your-GitHub-username}/Physician-Request-Web-App.git
 cd Physician-Request-Web-App
 py -3 -m venv venv
 
@@ -21,7 +34,7 @@ py -3 -m venv venv
 **macOS/Linux**
           
 ```
-git clone https://github.com/Dev-Elie/Physician-Request-Web-App.git
+git clone https://github.com/{your-GitHub-username}/Physician-Request-Web-App.git
 cd Physician-Request-Web-App
 python3 -m venv venv
 
