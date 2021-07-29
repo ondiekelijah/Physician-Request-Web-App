@@ -1,6 +1,6 @@
-### Objective
+## :small_blue_diamond: Objective :blush:
 Building a mobile and web compatible web application that enables patients and physicians get in reach easily.
-## Features
+## :small_blue_diamond: Features
 
 * Account management for both physicians and patients 
   - Create account,login and update account details
@@ -10,11 +10,17 @@ Building a mobile and web compatible web application that enables patients and p
                                                     
 * Physicians may toggle between times when they are online - available and when they are offline - not available for appointments
 * Patients to be able to see physicians around them and the approximate distance between them and their precise locations
+## :small_blue_diamond: Accomplished
+:heavy_check_mark: Authentication - Registration,Login,logout and account details update functionality<br/>
+:heavy_check_mark: View available physicians<br/>
+:heavy_check_mark: Physician online and offline status toggle<br/>
+:heavy_check_mark: Distance approximation between the physician and the patient using **Geoclue** and **geopy** libraries<br/>
+> Distance approximation is however not accurate at all :warning:
 
-### Requirements ,Packages used and Installation
+### :small_blue_diamond: Requirements ,Packages used and Installation
 Download and install Python, for this tutorial I'll be using Python 3.8.5, make sure to check the box Add Python to PATH on the installation setup screen
  
-### Installation
+### :small_blue_diamond: Installation
           
 Navigate to your current project directory for this case it will be **Physician-Request-Web-App**. <br>
           
