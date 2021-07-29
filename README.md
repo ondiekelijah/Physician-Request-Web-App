@@ -1,4 +1,4 @@
-## :small_blue_diamond: Objective :blush:
+## :small_blue_diamond: Objective 
 Building a mobile and web compatible web application that enables patients and physicians get in reach easily.
 ## :small_blue_diamond: Features
 
@@ -24,7 +24,7 @@ Download and install Python, for this tutorial I'll be using Python 3.8.5, make 
           
 Navigate to your current project directory for this case it will be **Physician-Request-Web-App**. <br>
           
-### 1 .Fork ,Clone the repo and Create an environment
+### 1 .Fork ,Clone the repo and Create an environment :pushpin:
           
 Depending on your operating system,make a virtual environment to avoid messing with your machine's primary dependencies
           
@@ -34,7 +34,6 @@ Depending on your operating system,make a virtual environment to avoid messing w
 git clone https://github.com/{your-GitHub-username}/Physician-Request-Web-App.git
 cd Physician-Request-Web-App
 py -3 -m venv venv
-
 ```
           
 **macOS/Linux**
@@ -43,10 +42,9 @@ py -3 -m venv venv
 git clone https://github.com/{your-GitHub-username}/Physician-Request-Web-App.git
 cd Physician-Request-Web-App
 python3 -m venv venv
-
 ```
 
-### 2 .Activate the environment
+### 2 .Activate the environment :pushpin:
           
 **Windows** 
 
@@ -58,13 +56,13 @@ python3 -m venv venv
 or
 ```source venv/bin/activate```
 
-### 3 .Install the requirements
+### 3 .Install the requirements :pushpin:
 
 Applies for windows/macOS/Linux
 
 ```pip install -r requirements.txt```
   
-### 4. Run the application 
+### 4. Run the application :pushpin:
 
 **For linux and macOS**
 Make the run file executable by running the code
@@ -79,8 +77,10 @@ Then start the application by executing the run file
 ```
 set FLASK_APP=main
 flask run
-
 ```
-The run file incase missing,create a new file name it **run** then add the following;
+The run file incase missing,create a new file name it **run** then add the following :point_down: ;
 
 ```FLASK_APP=main.py FLASK_DEBUG=1 FLASK_ENV=development flask run```
+
+<h2 style="text-align: center;">:sparkles::sparkles: Happy Open Source and Coding :computer: geek :sparkles: :sparkles:</h2>
+
