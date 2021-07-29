@@ -80,7 +80,9 @@ flask run
 ```
 The run file incase missing,create a new file name it **run** then add the following :point_down: ;
 
-```FLASK_APP=main.py FLASK_DEBUG=1 FLASK_ENV=development flask run```
+```FLASK_APP=main.py FLASK_DEBUG=1 FLASK_ENV=development flask run``` </br></br>
+![medoc](https://user-images.githubusercontent.com/57575260/127542252-424c7c69-326d-4863-82ab-1c2f86a981d4.png)
+
 
 </br></br></br>
 Found this interesting ? Let's tweet about it [![Twitter](https://img.shields.io/twitter/url?style=social&url=https%3A%2F%2Ftwitter.com%2F)](https://twitter.com/intent/tweet?text=Wow:&url=https%3A%2F%2Fgithub.com%2FDev-Elie%2FPhysician-Request-Web-App)
