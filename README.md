@@ -10,6 +10,9 @@ Building a mobile and web compatible web application that enables patients and p
                                                     
 * Physicians may toggle between times when they are online - available and when they are offline - not available for appointments
 * Patients to be able to see physicians around them and the approximate distance between them and their precise locations
+* Patients to be able to send appointment requests 
+* Physicians to manage appointment requests via their portals
+
 ## :small_blue_diamond: Accomplished
 :heavy_check_mark: Authentication - Registration,Login,logout and account details update functionality<br/>
 :heavy_check_mark: View available physicians<br/>
