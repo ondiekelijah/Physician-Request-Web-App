@@ -88,9 +88,7 @@ The run file incase missing,create a new file name it **run** then add the follo
 
 
 </br></br></br>
-Found this interesting ? Let's tweet about it [![Twitter](https://img.shields.io/twitter/url?style=social&url=https%3A%2F%2Ftwitter.com%2F)](https://twitter.com/intent/tweet?text=Wow:&url=https%3A%2F%2Fgithub.com%2FDev-Elie%2FPhysician-Request-Web-App)
+<div align="center"><h1>Happy Open Source and Coding :+1: </h1></div>
+<p align="center"> <a href="https://twitter.com/dev_elie" target="blank"><img src="https://img.shields.io/twitter/follow/dev_elie?logo=twitter&style=for-the-badge" alt="dev_elie" /></a> </p>
 
-#### Follow me on twitter at  **@dev_elie** or   ![Twitter Follow](https://img.shields.io/twitter/follow/dev_elie?style=social)
-
-<h2 style="text-align: center;">:sparkles::sparkles: Happy Open Source and Coding :computer: geek :sparkles: :sparkles:</h2>
 
