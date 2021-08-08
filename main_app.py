@@ -4,9 +4,6 @@ from dotenv import load_dotenv
 from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
 from flask_bcrypt import Bcrypt
-from flask_moment import Moment
-from flask_admin import Admin
-from flask_admin.contrib.sqla import ModelView
 from flask_migrate import Migrate
 from flask_login import (
     UserMixin,
@@ -24,7 +21,6 @@ login_manager.login_message_cartegory = "info"
 
 db = SQLAlchemy()
 migrate = Migrate()
-moment = Moment()
 bcrypt = Bcrypt()
 
 # Create a flask app method
